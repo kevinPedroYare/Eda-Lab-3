@@ -23,4 +23,17 @@ public class Queue<E> {
     public void clear() {
         queue.clear();
     }
+
+    //Recupera al encabezado de la cola
+    public E element() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Queue is empty");
+        }
+        return queue.get(0);
+    }
+
+    //Agrega un nuevo elemento a la cola
+    public boolean offer(E e) {
+        return queue.add(e);
+    }
 }
