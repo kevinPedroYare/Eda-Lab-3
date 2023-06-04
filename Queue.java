@@ -10,7 +10,7 @@ public class Queue<E> {
     }
 
     //Función agregar
-    public boolean add(E e) {
+    public boolean push(E e) {
         return queue.add(e);
     }
 
@@ -25,15 +25,25 @@ public class Queue<E> {
     }
 
     //Recupera al encabezado de la cola
-    public E element() {
+    public E top() {
         if (isEmpty()) {
             throw new IllegalStateException("Queue is empty");
         }
         return queue.get(0);
     }
 
-    //Agrega un nuevo elemento a la cola
-    public boolean offer(E e) {
-        return queue.add(e);
+    //Recupera y elimina el encabezado de esta cola
+    public E pop() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Queue is empty");
+        }
+        return queue.remove(0);
+    }
+
+    public E search(int position) {
+        if (isEmpty() || position < 0 || position > queue.size()) {
+            return null;
+        }
+        return queue.get(position);
     }
 }
