@@ -40,6 +40,7 @@ public class Queue<E> {
         return queue.remove(0);
     }
 
+    //Busca el número de orden
     public E search(int position) {
         if (isEmpty() || position < 0 || position > queue.size()) {
             return null;
