@@ -47,4 +47,31 @@ public class Queue<E> {
         }
         return queue.get(position);
     }
+    
+    public static void main(String[] args) {
+        Queue<Integer> queue = new Queue<>();
+
+        System.out.println(queue.isEmpty()); // Imprime: true
+
+        queue.push(10);
+        queue.push(20);
+        queue.push(30);
+        queue.push(40);
+
+        System.out.println(queue.isEmpty()); // Imprime: false
+        System.out.println(queue.top()); // Imprime: 10
+
+        queue.pop();
+        System.out.println(queue.top()); // Imprime: 20
+
+        queue.push(50);
+        System.out.println(queue.top()); // Imprime: 20
+
+        System.out.println(queue.search(1)); // Imprime: 20
+        System.out.println(queue.search(3)); // Imprime: 50
+        System.out.println(queue.search(5)); // Imprime: null
+
+        queue.clear();
+        System.out.println(queue.isEmpty()); // Imprime: true
+    }
 }
